@@ -1,9 +1,11 @@
 import { LEVEL, OBJECT_TYPE } from './setup';
 import { randomMovement } from './ghostMoves';
+
 // Classes
 import { GameBoard } from './GameBoard';
 import { Pacman } from './Pacman';
 import { Ghost } from './Ghost';
+
 // Sounds
 const soundDot = require('url:./sounds/munch.mp3');
 const soundPill = require('url:./sounds/pill.mp3');
@@ -15,6 +17,12 @@ const soundGhost = require('url:./sounds/eat_ghost.mp3');
 const gameGrid = document.querySelector('#game');
 const scoreTable = document.querySelector('#score');
 const startButton = document.querySelector('#start-button');
+
+// Mobile buttons
+const upButton = document.querySelector('#up-button');
+const leftButton = document.querySelector('#left-button');
+const rightButton = document.querySelector('#right-button');
+const downButton = document.querySelector('#down-button');
 
 // Game constants
 const POWER_PILL_TIME = 10000;
@@ -133,6 +141,32 @@ const startGame = () => {
   gameBoard.addObject(289, [OBJECT_TYPE.PACMAN]);
   document.addEventListener('keydown', e =>
     pacman.handleKeyInput(e, gameBoard.objectExist.bind(gameBoard))
+  );
+
+  // For mobile version
+  upButton.addEventListener('click', e =>
+    pacman.handleKeyInput(
+      { ...e, keyCode: 38, key: 'ArrowUp' },
+      gameBoard.objectExist.bind(gameBoard)
+    )
+  );
+  leftButton.addEventListener('click', e =>
+    pacman.handleKeyInput(
+      { ...e, keyCode: 37, key: 'ArrowLeft' },
+      gameBoard.objectExist.bind(gameBoard)
+    )
+  );
+  rightButton.addEventListener('click', e =>
+    pacman.handleKeyInput(
+      { ...e, keyCode: 39, key: 'ArrowRight' },
+      gameBoard.objectExist.bind(gameBoard)
+    )
+  );
+  downButton.addEventListener('click', e =>
+    pacman.handleKeyInput(
+      { ...e, keyCode: 40, key: 'ArrowDown' },
+      gameBoard.objectExist.bind(gameBoard)
+    )
   );
 
   const ghosts = [
