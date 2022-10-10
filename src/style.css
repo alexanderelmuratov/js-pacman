@@ -45,10 +45,16 @@ body {
   height: 50px;
   border: 5px darkblue solid;
   background: black;
-  margin-top: 20px;
+  margin-top: 10px;
   color: white;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 2rem;
+}
+
+@media screen and (min-width: 1200px) {
+  #score {
+    margin-top: 20px;
+  }
 }
 
 #start-button {
@@ -57,11 +63,17 @@ body {
   border: 3px black solid;
   border-radius: 30px;
   background: darkblue;
-  margin-top: 20px;
+  margin-top: 10px;
   color: white;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1rem;
   outline: none;
+}
+
+@media screen and (min-width: 1200px) {
+  #start-button {
+    margin-top: 20px;
+  }
 }
 
 #mobile-buttons-wrapper {
@@ -69,8 +81,8 @@ body {
   flex-direction: column;
   justify-content: space-between; 
   align-items: center;
-  width: 150px;
-  margin-top: 20px;
+  width: 170px;
+  margin-top: 10px;
 }
 
 @media screen and (min-width: 1200px) {
@@ -93,14 +105,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   border-radius: 50px;
   outline: none;
   border: none;
   box-shadow: 1px 1px 4px #555;
-  /* background: #ff4500; */
-  background: springgreen;
+  background: #ff4500;
+  /* background: salmon; */
   /* background: #3ba9ca; */
   color: black;
 }

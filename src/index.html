@@ -4,6 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JS Pacman</title>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <style>
+      .material-icons.md-64 {
+        font-size: 64px;
+      }
+    </style>
     <link rel="stylesheet" href="./style.css" />
     <script type="module" src="./index.js"></script>
   </head>
@@ -14,14 +23,22 @@
       <button id="start-button">Start Game</button>
       <div id="mobile-buttons-wrapper">
         <div>
-          <button id="up-button">Up</button>
+          <button id="up-button">
+            <i class="material-icons md-64">keyboard_arrow_up</i>
+          </button>
         </div>
         <div id="left-right-buttons-wrapper">
-          <button id="left-button">Left</button>
-          <button id="right-button">Right</button>
+          <button id="left-button">
+            <i class="material-icons md-64">keyboard_arrow_left</i>
+          </button>
+          <button id="right-button">
+            <i class="material-icons md-64">keyboard_arrow_right</i>
+          </button>
         </div>
         <div>
-          <button id="down-button">Down</button>
+          <button id="down-button">
+            <i class="material-icons md-64">keyboard_arrow_down</i>
+          </button>
         </div>
       </div>
     </div>
