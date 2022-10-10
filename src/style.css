@@ -112,8 +112,6 @@ body {
   border: none;
   box-shadow: 1px 1px 4px #555;
   background: #ff4500;
-  /* background: salmon; */
-  /* background: #3ba9ca; */
   color: black;
 }
 
@@ -130,7 +128,6 @@ body {
 }
 
 .wall {
-  /* border: 1px solid blue; */
   background-image: radial-gradient(blue, #0000cc, #000099, #000066);
 }
 

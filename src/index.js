@@ -10,6 +10,7 @@ import { Ghost } from './Ghost';
 const soundDot = require('url:./sounds/munch.mp3');
 const soundPill = require('url:./sounds/pill.mp3');
 const soundGameStart = require('url:./sounds/game_start.mp3');
+const soundGameWin = require('url:./sounds/win.mp3');
 const soundGameOver = require('url:./sounds/death.mp3');
 const soundGhost = require('url:./sounds/eat_ghost.mp3');
 
@@ -43,9 +44,23 @@ const playAudio = audio => {
 };
 
 const gameOver = pacman => {
-  playAudio(soundGameOver);
+  gameWin ? playAudio(soundGameWin) : playAudio(soundGameOver);
 
   document.removeEventListener('keydown', e =>
+    pacman.handleKeyInput(e, gameBoard.objectExist.bind(gameBoard))
+  );
+
+  // For mobile version
+  upButton.removeEventListener('click', e =>
+    pacman.handleKeyInput(e, gameBoard.objectExist.bind(gameBoard))
+  );
+  leftButton.removeEventListener('click', e =>
+    pacman.handleKeyInput(e, gameBoard.objectExist.bind(gameBoard))
+  );
+  rightButton.removeEventListener('click', e =>
+    pacman.handleKeyInput(e, gameBoard.objectExist.bind(gameBoard))
+  );
+  downButton.removeEventListener('click', e =>
     pacman.handleKeyInput(e, gameBoard.objectExist.bind(gameBoard))
   );
 
@@ -139,6 +154,7 @@ const startGame = () => {
 
   const pacman = new Pacman(2, 289);
   gameBoard.addObject(289, [OBJECT_TYPE.PACMAN]);
+
   document.addEventListener('keydown', e =>
     pacman.handleKeyInput(e, gameBoard.objectExist.bind(gameBoard))
   );
